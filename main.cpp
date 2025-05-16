@@ -1,22 +1,5 @@
 #include "radio.h"
 
-#if defined(SX127x_H)
-    #define BW_KHZ              125
-    #define SPREADING_FACTOR    12
-    #define CF_HZ               868300000
-    #define TX_DBM              20
-#elif defined(SX126x_H)
-    #define BW_KHZ              125
-    #define SPREADING_FACTOR    7
-    #define CF_HZ               868300000
-    #define TX_DBM              (Radio::chipType == CHIP_TYPE_SX1262 ? 20 : 14) 
-#elif defined(SX128x_H)
-    #define BW_KHZ              200
-    #define SPREADING_FACTOR    7
-    #define CF_HZ               2487000000
-    #define TX_DBM              6
-#endif
-
 /**********************************************************************/
 EventQueue queue(4 * EVENTS_EVENT_SIZE);
 
